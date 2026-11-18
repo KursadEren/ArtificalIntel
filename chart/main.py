@@ -1,3 +1,4 @@
+import os
 import requests
 import csv
 import datetime
@@ -8,7 +9,7 @@ def log_message(message):
     with open("log.txt", "a", encoding="utf-8") as logfile:
         logfile.write(f"{datetime.datetime.now()}: {message}\n")
 
-API_KEY = 'REMOVED_POLYGON_API_KEY'
+API_KEY = os.environ["POLYGON_API_KEY"]  # export POLYGON_API_KEY=...
 
 tickers = [
 
